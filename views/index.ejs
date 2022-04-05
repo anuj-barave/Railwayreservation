@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Railway Reservation</title>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .body {
+        background-color: rgb(156, 186, 246);
+      }
+      #card {
+        margin: 40px;
+        
+        padding: 10px;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-primary"">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Railway Reservation</a>
+      </div>
+    </nav>
+    <div class="container" id="card">
+      <form action="/form1" method="post">
+        <h2 style="text-align:center;color:rgb(0, 110, 255)">Enter Information</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="first">Ticket No</label>
+              <input
+                type="Number"
+                class="form-control"
+                placeholder="Enter Ticket no"
+                id="first"
+                name="id"
+              />
+            </div>
+          </div>
+          <!--  col-md-6   -->
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="last">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter your Name"
+                id="last"
+                name="name1"
+              />
+            </div>
+          </div>
+          <!--  col-md-6   -->
+        </div>
+
+        <br />
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="company">Address</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter Address"
+                id="company"
+                name="address"
+              />
+            </div>
+          </div>
+          <!--  col-md-6   -->
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input
+                type="Number"
+                class="form-control"
+                id="Enter Phone No"
+                placeholder="phone"
+                name="phone"
+              />
+            </div>
+          </div>
+          <!--  col-md-6   -->
+        </div>
+        <!--  row   -->
+
+        <br />
+        <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="company">Start Destination</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Start Destination"
+                  name="start"
+                />
+              </div>
+            </div>
+            <!--  col-md-6   -->
+  
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="phone">Final Destination</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Final Destination"
+                  name="final"
+                />
+              </div>
+            </div>
+            <!--  col-md-6   -->
+          </div>
+          <!--  row   -->
+  
+        
+        <br />
+        <div>
+            <center> <button type="submit" class="btn btn-primary">Submit</button></center>
+        </div>
+
+        <br />
+      </form>
+    </div>
+  </body>
+</html>
