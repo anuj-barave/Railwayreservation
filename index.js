@@ -19,6 +19,36 @@ app.get('/',(req,res)=>{
     res.render('index');
 })
 
+app.get('/view',(req,res)=>{
+  var AWS = require("aws-sdk");
+
+  // Set a region to interact with (make sure it's the same as the region of your table)
+  AWS.config.update({region: 'ap-south-1'});
+  
+  
+  
+  // Create the Service interface for DynamoDB
+  var dynamodb = new AWS.DynamoDB({apiVersion: '2012-08-10'});
+  
+  // Create the Document Client interface for DynamoDB
+  var ddbDocumentClient = new AWS.DynamoDB.DocumentClient();
+  
+  async function scanForResults(){
+      try {
+          var params = {
+              TableName: "Cloudoea"
+          };
+          var result = await dynamodb.scan(params).promise()
+          // console.log(result.Items[0].Name);
+         res.render('view_records', {data: result.Items});
+      } catch (error) {
+          console.error(error);
+      }
+  }
+  scanForResults()
+});
+
+
 app.post('/form1', (req, res) => {
   var sqs = new AWS.SQS({apiVersion: '2012-11-05'});
 
@@ -74,5 +104,5 @@ sqs.sendMessage(params, function(err, data) {
 });
 });
 
-PORT = 3201
+PORT = 3203
 app.listen(PORT, () => console.log(`App listening on port ${PORT}`),);
